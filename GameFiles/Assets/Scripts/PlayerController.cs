@@ -14,6 +14,10 @@ public class PlayerController : MonoBehaviour {
 	}
 	
 	void Update () {
+        GetMovement();
+	}
+
+    void GetMovement() {
         float _x = Input.GetAxisRaw("Horizontal");
         float _y = Input.GetAxisRaw("Vertical");
 
@@ -23,5 +27,6 @@ public class PlayerController : MonoBehaviour {
         Vector2 velocity = (movVertical + movHorizontal).normalized * speed;
         Debug.Log(velocity);
         motor.Move(velocity);
-	}
+    }
+
 }
