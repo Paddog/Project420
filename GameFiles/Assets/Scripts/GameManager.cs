@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour {
     #region Public Variables
     public GameTime mGameTime;
     public float TimeModifier;
+    public const string IngameSpriteFileEnding = ".PNG";
     #endregion
 
     #region Private Variables

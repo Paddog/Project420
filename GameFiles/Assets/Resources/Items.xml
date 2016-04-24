@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ItemCollection>
+	<Items>
+		<Item Name="Blockage">
+			<Stackable>true</Stackable>
+      <Type>Weed</Type>
+		</Item>
+	</Items>
+</ItemCollection>

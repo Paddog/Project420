@@ -20,17 +20,20 @@ public class PlayerController : MonoBehaviour {
 	}
 
     void GetMovement() {
+        //Get Input for _x and _y
         float _x = Input.GetAxisRaw("Horizontal");
         float _y = Input.GetAxisRaw("Vertical");
-        Debug.Log("Value x: " + _x + "\n" + "Value y: " + _y);
+
+        //Tell the Animator what Button is pressed
         mainAnim.SetFloat("xAxis", _x);
         mainAnim.SetFloat("yAxis", _y);
 
+        //Get Movement
         Vector2 movVertical = transform.up * _y;
         Vector2 movHorizontal = transform.right * _x;
 
+        //Apply Movement
         Vector2 velocity = (movVertical + movHorizontal).normalized * speed;
-        Debug.Log(velocity);
         motor.Move(velocity);
     }
 
