@@ -5,5 +5,9 @@
 			<Stackable>true</Stackable>
       <Type>Weed</Type>
 		</Item>
+    <item name="Flowerpot">
+      <stackable>false</stackable>
+      <type>Utilities</type>
+    </item>
 	</Items>
 </ItemCollection>
