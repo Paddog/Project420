@@ -7,6 +7,7 @@ using System.IO;
 public enum ItemTypes {
     Weed,
     Utilities,
+    Furniture,
     //TODO: ETC!
 }
 

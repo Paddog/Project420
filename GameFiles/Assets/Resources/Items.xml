@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ItemCollection>
 	<Items>
+    
 		<Item Name="Blockage">
 			<Stackable>true</Stackable>
       <Type>Weed</Type>
 		</Item>
-    <item name="Flowerpot">
-      <stackable>false</stackable>
-      <type>Utilities</type>
-    </item>
+    
+    <Item Name="Flowerpot">
+      <Stackable>false</Stackable>
+      <Type>Utilities</Type>
+    </Item>
+
+    <Item Name="Cabinet">
+      <Stackable>false</Stackable>
+      <Type>Furniture</Type>
+    </Item>
+    
 	</Items>
 </ItemCollection>
