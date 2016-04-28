@@ -1,26 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[ExecuteInEditMode]
 public class DepthController : MonoBehaviour {
-    public bool isPlacedOnTop = false;
 
-    private SpriteRenderer mainRenderer;
+    private SpriteRenderer spriteR;
 
     void Start() {
-        mainRenderer = this.GetComponent<SpriteRenderer>();
+        spriteR = GetComponent<SpriteRenderer>();
     }
 
-    void LateUpdate() {
-
-        //transform.position.Set(transform.position.x, this.transform.position.y, this.transform.position.y * 0.001f);
-
-        if(isPlacedOnTop == false) {
-            mainRenderer.sortingOrder = Mathf.RoundToInt(this.transform.position.y * -1);
-        } else {
-            mainRenderer.sortingOrder += 1;
-        }
-
-        //Vector2 mainCameraWorldPos = transform.TransformPoint(Camera.main.WorldToScreenPoint(mainRenderer.bounds.min));
-        //mainRenderer.sortingOrder = (int)mainCameraWorldPos.y * -1;
+    void Update() {
+        spriteR.sortingOrder = (int)(transform.position.y * -10);
     }
 }
