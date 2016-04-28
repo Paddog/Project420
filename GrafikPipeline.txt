@@ -1,0 +1,4 @@
+Grafik -> UnityFolder
+Grafik -> ImportSettings -> PointFilter
+Grafik -> ImportSettings -> TrueColor
+Grafik -> ImportSettings -> Pivot -> Bottom

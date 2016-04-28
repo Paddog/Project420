@@ -58,28 +58,26 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\DebugCamera.cs" />
-    <Compile Include="Assets\Scripts\DepthController.cs" />
-    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Scripts\ItemContainer.cs" />
     <Compile Include="Assets\Scripts\ItemLoader.cs" />
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\PlayerMotor.cs" />
+    <Compile Include="Assets\Scripts\Misc\DebugCamera.cs" />
+    <Compile Include="Assets\Scripts\Misc\DepthController.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerMotor.cs" />
     <Compile Include="Assets\Scripts\Structs\GameTime.cs" />
+    <Compile Include="Assets\Scripts\Structs\Point.cs" />
+    <Compile Include="Assets\Scripts\World\GameManager.cs" />
+    <Compile Include="Assets\Scripts\World\MapLoader.cs" />
+    <Compile Include="Assets\Scripts\World\Tile.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\MapFiles\AssetsRoom2.txt" />
     <None Include="Assets\Resources\Items.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
