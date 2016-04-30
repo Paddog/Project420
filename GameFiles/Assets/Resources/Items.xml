@@ -2,14 +2,9 @@
 <ItemCollection>
 	<Items>
     
-		<Item Name="Blockage">
-			<Stackable>true</Stackable>
-      <Type>Weed</Type>
-		</Item>
-    
     <Item Name="Flowerpot">
       <Stackable>false</Stackable>
-      <Type>Utilities</Type>
+      <Type>Furniture</Type>
     </Item>
 
     <Item Name="Cabinet">

@@ -12,25 +12,21 @@ public enum ItemTypes {
 }
 
 public class Item {
-    public int ID;
+
     [XmlAttribute("Name")]
     public string Name;
-
-    //[XmlElement("IngameSprite")]
-    public Texture IngameSprite;
-
+    
     [XmlElement("Type")]
     public ItemTypes Type;
-
-    //[XmlElement("UISprite")]
-    public Texture UISprite;
-
+    
     [XmlElement("Stackable")]
     public bool Stackable;
 
-    public void Init() {
-        IngameSprite = Resources.Load("IG" + Name) as Texture;
+    
+    public Texture UISprite;
+    public int ID;
 
+    public void CreatePrototype() {
         //CRITICAL: Reactivate if we have UI
         //UISprite = Resources.Load("UI" + Name + GameManager.IngameSpriteFileEnding);
     }

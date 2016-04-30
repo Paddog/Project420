@@ -9,17 +9,49 @@ public class PlayerController : MonoBehaviour {
 
     private PlayerMotor motor;
     private Animator mainAnim;
+    private ItemLoader itemDatabase;//TEMP
+    public Item itemInHand;
 
-	void Start () {
+    private GameObject gameObjectInfront;
+    private Vector2 velocity;
+    private Vector2 lastFrameVelocity;
+    void Start () {
         motor = GetComponent<PlayerMotor>();
         mainAnim = GetComponent<Animator>();
-	}
-	
-	void Update () {
+        itemDatabase = GameObject.Find("_GameManager").GetComponent<ItemLoader>();
+        itemInHand = itemDatabase.ItemDatabase["Cabinet"];
+    }
+
+    void Update() {
         GetMovement();
-	}
+        Debug.Log(itemInHand);
+        //TODO: Disable the collider for the time the GameObject is in the hand
+        Placement();
+
+    }
+    //TODO: REDO this !
+    void Placement() {
+        if(itemInHand != null) {
+            if(itemInHand.Type == ItemTypes.Furniture) {
+                //Show the item infront of the char
+                if(gameObjectInfront == null) {
+                    gameObjectInfront = Instantiate(itemDatabase.ItemPrototypes[itemInHand]);
+                } else {
+                    //Move the Object
+                    //TODO: better placement option
+                    Point pointPos = new Point((int)this.transform.position.x, (int)this.transform.position.y);
+                    gameObjectInfront.transform.position = new Vector3(pointPos.x, pointPos.y, 0);
+                }
+                if(Input.GetKeyUp(KeyCode.E)) {
+                    itemInHand = null;
+                    gameObjectInfront = null;
+                }
+            }
+        }
+    }
 
     void GetMovement() {
+        lastFrameVelocity = velocity;
         //Get Input for _x and _y
         float _x = Input.GetAxisRaw("Horizontal");
         float _y = Input.GetAxisRaw("Vertical");
@@ -33,7 +65,7 @@ public class PlayerController : MonoBehaviour {
         Vector2 movHorizontal = transform.right * _x;
 
         //Apply Movement
-        Vector2 velocity = (movVertical + movHorizontal).normalized * speed;
+        velocity = (movVertical + movHorizontal).normalized * speed;
         motor.Move(velocity);
     }
 

@@ -73,8 +73,10 @@
     <Compile Include="Assets\Scripts\Structs\GameTime.cs" />
     <Compile Include="Assets\Scripts\Structs\Point.cs" />
     <Compile Include="Assets\Scripts\World\GameManager.cs" />
-    <Compile Include="Assets\Scripts\World\MapLoader.cs" />
+    <Compile Include="Assets\Scripts\World\Room.cs" />
+    <Compile Include="Assets\Scripts\World\RoomCreator.cs" />
     <Compile Include="Assets\Scripts\World\Tile.cs" />
+    <Compile Include="Assets\Scripts\World\World.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\MapFiles\AssetsRoom2.txt" />
